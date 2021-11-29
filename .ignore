@@ -1,0 +1,15 @@
+!certs/*
+
+!.DS_Store
+!.phpunit.result.cache
+!storage/*.key
+*.log
+!.env
+!env.json
+!secrets.json
+!_ide_helper.php
+!todo.txt
+!Homestead.json
+!Homestead.yaml
+
+#
