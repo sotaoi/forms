@@ -2,7 +2,7 @@ import type {
   InputValidatorConfig,
   InputValidationResult,
   RequesterFn,
-  InputValidator,
+  InputValidatorContract,
 } from '@sotaoi/contracts/http/input-validator-contract';
 import type { ErrorResult } from '@sotaoi/contracts/transactions';
 import type { BaseInput, FieldValidation, FormValidations } from '@sotaoi/input/base-input';
@@ -10,7 +10,7 @@ import type { DatabaseConnection } from '@sotaoi/contracts/definitions/mdriver';
 
 import { CollectionInput } from '@sotaoi/input/collection-input';
 
-declare class InputValidatorService extends InputValidator {
+declare class InputValidatorService extends InputValidatorContract {
   protected t: (key: string, ...args: any[]) => string;
   protected messages: { [key: string]: { [key: string]: string } };
 

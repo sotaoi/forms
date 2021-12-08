@@ -1,4 +1,4 @@
-const { InputValidator } = require('@sotaoi/contracts/http/input-validator-contract');
+const { InputValidatorContract } = require('@sotaoi/contracts/http/input-validator-contract');
 const _ = require('lodash');
 const { OmniBaseField } = require('@sotaoi/input/omni-base-field');
 const { FileInput } = require('@sotaoi/input/file-input');
@@ -9,7 +9,7 @@ const { CollectionInput } = require('@sotaoi/input/collection-input');
 const { RefSelectInput } = require('@sotaoi/input/ref-select-input');
 const { iterateAsync, clone } = require('./helper');
 
-class InputValidatorService extends InputValidator {
+class InputValidatorService extends InputValidatorContract {
   constructor(config, mdb, requester) {
     config.t = config.t || ((key, ...args) => key);
     config.messages = {
