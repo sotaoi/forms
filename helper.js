@@ -10,7 +10,7 @@ const iterateAsync = async (obj, stack, transformer) => {
   return obj;
 };
 
-const clone = () => {
+const clone = (object) => {
   return _.cloneDeep(object);
 };
 

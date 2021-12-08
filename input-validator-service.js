@@ -116,7 +116,7 @@ class InputValidatorService extends InputValidator {
   }
 
   async validatePayload(payload, form, tlPrefix, isUpdateCommand) {
-    // await this.validateCollections(payload, form, tlPrefix);
+    await this.validateCollections(payload, form, tlPrefix);
     await iterateAsync(clone(form), tlPrefix, async (item, prefix, transformer, prop) => {
       prefix = prefix ? `${prefix}.` : '';
       const key = prefix + prop;
