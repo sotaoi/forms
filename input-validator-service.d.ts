@@ -14,13 +14,25 @@ declare class InputValidatorService extends InputValidatorContract {
   protected t: (key: string, ...args: any[]) => string;
   protected messages: { [key: string]: { [key: string]: string } };
 
+  // protected config: InputValidatorConfig;
+  // protected mdb: () => null | ((repository: string) => DatabaseConnection.QueryBuilder);
+  // protected requester: null | RequesterFn<FieldValidation>;
+  // protected formValidation: null | FormValidation;
+  // protected errorTitle: null | string;
+  // protected errorMsg: null | string;
+  // protected errorMessages: { [key: string]: string[] };
+  // protected apiErrorMessages: { [key: string]: string[] };
+  // protected apiErrorXdata: { [key: string]: any };
+
   constructor(
     config: InputValidatorConfig,
     mdb: () => null | ((repository: string) => DatabaseConnection.QueryBuilder),
     requester: null | RequesterFn
   );
 
-  public getFormValidation(getInput: (key: string) => void | null | BaseInput<any, any>): InputValidatorService;
+  public getFormValidation(
+    getInput: (key: string) => void | null | BaseInput<any, any>
+  ): InputValidatorContract<(key: string) => void | null | BaseInput>;
 
   public getResult(): InputValidationResult;
 
@@ -42,6 +54,8 @@ declare class InputValidatorService extends InputValidatorContract {
   ): Promise<void>;
 
   public validateCollections(payload: { [key: string]: any }, form: FormValidations, tlPrefix: string): Promise<void>;
+
+  public isValid(): boolean;
 
   public setErrorResult(errorResult: ErrorResult): void;
 
