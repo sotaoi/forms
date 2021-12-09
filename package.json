@@ -11,7 +11,7 @@
     "@sotaoi/input": "^1.0.4"
   },
   "devDependencies": {
-    "@sotaoi/input": "file:./",
+    "@sotaoi/forms": "file:./",
     "typescript": "4.1.5"
   },
   "dependencies": {

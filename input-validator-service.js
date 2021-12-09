@@ -7,7 +7,7 @@ const { MultiFileInput } = require('@sotaoi/input/multi-file-input');
 const { BooleanInput } = require('@sotaoi/input/boolean-input');
 const { CollectionInput } = require('@sotaoi/input/collection-input');
 const { RefSelectInput } = require('@sotaoi/input/ref-select-input');
-const { iterateAsync, clone } = require('./helper');
+const { iterateAsync, clone } = require('@sotaoi/forms/helper');
 
 class InputValidatorService extends InputValidatorContract {
   constructor(config, mdb, requester) {
